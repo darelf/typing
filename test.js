@@ -9,6 +9,9 @@ test('instance', function(t) {
   typer = new Typing('Some Text')
   t.equals(typer.t, 'Some Text', 'It should have gotten the text')
   
+  typer = new Typing({timing: 100})
+  t.ok(typer instanceof Typing, 'Using options as first parameter')
+  t.equals(typer.timing, 100, 'Timing should have been set to 100')
   t.end()
 })
 

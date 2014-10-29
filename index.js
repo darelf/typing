@@ -8,12 +8,16 @@ function Typing(text, opts) {
   // I don't know... this seems... whatever
   if (!text || (typeof text != 'string')) {
     this.t = ''
+    if (typeof text == 'object') {
+      opts = text
+    }
   } else {
     this.t = text
   }
   
   this.tlen = 0
   this.timing = (opts && opts.timing) ? opts.timing : 50
+  this.variation = (opts && opts.variation) ? opts.variation : 0
 }
 util.inherits(Typing, events.EventEmitter)
 

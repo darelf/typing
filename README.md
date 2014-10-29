@@ -1,6 +1,6 @@
 SlowTyping
 ==========
-[![NPM version](https://badge.fury.io/js/endwith.svg)](http://badge.fury.io/js/endwith)
+[![NPM version](https://badge.fury.io/js/slowtyping.svg)](http://badge.fury.io/js/slowtyping)
 
 S l o w  T y p i n g
 
