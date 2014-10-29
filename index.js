@@ -25,6 +25,13 @@ function isElement(obj) {
   return (obj && typeof obj == 'object' && 'nodeType' in obj && obj.nodeType === 1)
 }
 
+Typing.prototype.variedTiming = function() {
+  if (this.variation < 1) {
+    return this.timing
+  }
+  return (Math.floor(Math.random() * this.variation) - (this.variation / 2)) + this.timing
+}
+
 Typing.prototype.type = function(text, elem) {
   var e = elem
   if (text) {
@@ -42,7 +49,7 @@ Typing.prototype.type = function(text, elem) {
     e.innerHTML = txt
   }
   if (this.tlen < this.t.length+1) {
-    setTimeout(this.type.bind(this), this.timing, e)
+    setTimeout(this.type.bind(this), this.variedTiming(), e)
   } else {
     this.emit('end')
     this.tlen = 0
