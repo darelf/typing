@@ -10,5 +10,9 @@
   "license": "MIT",
   "devDependencies": {
     "tape": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/darelf/typing.git"
   }
 }
