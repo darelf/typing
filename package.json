@@ -1,0 +1,14 @@
+{
+  "name": "typing",
+  "version": "1.0.0",
+  "description": "Slow typing",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "author": "Darel Finkbeiner <darelf@me.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^3.0.1"
+  }
+}
