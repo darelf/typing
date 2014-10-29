@@ -18,3 +18,5 @@ The words will come out slowly (according to the `timing` option).
 
 It's pretty rudimentary I know. Whatever.
 
+Darel Finkbeiner, MIT License
+
