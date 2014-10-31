@@ -32,7 +32,25 @@ Typing.prototype.variedTiming = function() {
   return (Math.floor(Math.random() * this.variation) - (this.variation / 2)) + this.timing
 }
 
+Typing.prototype.stop = function(cb) {
+  if (this.isTyping) {
+    this.stopTyping = true
+    this.once('end', cb)
+  } else {
+    cb()
+  }
+}
+
 Typing.prototype.type = function(text, elem) {
+  if (this.stopTyping) {
+    this.tlen = 0
+    this.t = ''
+    this.stopTyping = false
+    this.isTyping = false
+    this.emit('end')
+    return
+  }
+  this.isTyping = true
   var e = elem
   if (text) {
     if (isElement(text)) {
@@ -51,8 +69,10 @@ Typing.prototype.type = function(text, elem) {
   if (this.tlen < this.t.length+1) {
     setTimeout(this.type.bind(this), this.variedTiming(), e)
   } else {
-    this.emit('end')
     this.tlen = 0
     this.t = ''
+    this.isTyping = false
+    this.stopTyping = false
+    this.emit('end')
   }
 }

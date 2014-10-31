@@ -1,6 +1,6 @@
 {
   "name": "slowtyping",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Slow typing",
   "main": "index.js",
   "scripts": {
